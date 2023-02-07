@@ -46,5 +46,10 @@
   "packageManager": "yarn@3.2.1",
   "engines": {
     "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@gelatonetwork/gasless-wallet": "^0.0.2-alpha.2",
+    "@metamask/snap-types": "^0.23.0",
+    "ethers": "5.7.2"
   }
 }
