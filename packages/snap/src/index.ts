@@ -64,7 +64,7 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
         throw new Error('network is not Goerli');
       }
 
-      const myWallet = await getSigner(provider, 0); // Only for 2 first addresses
+      const myWallet = await getSigner(provider, 0); // Only for 1 first addresses
 
       const gaslessWalletConfig: GaslessWalletConfig = {
         apiKey: '1NnnocBNgXnG1VgUnFTHXmUICsvYqfjtKsAq1OCmaxk_',
@@ -75,14 +75,11 @@ export const onRpcRequest: OnRpcRequestHandler = async ({
       const gaslessWallet = new GaslessWallet(provider as unknown as ethers.providers.ExternalProvider, gaslessWalletConfig);
 
 
+      /// WHEN initializing the gasless wallet throws the erorr
 
       await gaslessWallet.init();
 
-      throw new Error("ok");
 
-
-      throw new Error(await gaslessWallet.getAddress());
-      
 
       const contract = new Contract(
         '0xf87389350764548698E35bFEF1682B1328811657',
